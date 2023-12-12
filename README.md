@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Identifeye 🚀
 
-## Getting Started
+# • Problem statement
+What problem is the app solving?
 
-First, run the development server:
+Problem: Financial institutions face a number of challenges in verifying the identities of their customers. 
+1.    Fraud: Fraudsters can use fake or stolen IDs to open accounts and commit financial crimes.
+2.    Inaccuracy: Traditional identity verification methods can be inaccurate, leading to false positives and false negatives.
+3.    Inconsistency: Identity verification practices can vary from one institution to another, making it difficult for customers to provide their information.
+4.  Data sharing Issues:  Users sometimes do not have full control of their own data and are unable to share their data from one device or web app to another. 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+•Proposed app solution
+What solution is the app bringing?
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Solutions 
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Benefits: Identifeye offers a number of benefits to financial institutions, including:
+1. Reduced fraud: Identifeye's use of multiple verification methods helps to reduce fraud.
+With IdentifEye  Our users would be able to run a genuine  KYC to all their customers
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+2. Accuracy:
 
-## Learn More
+3. Consistency: Financial institutions can use a uniform identification process to verify the identity of their users. This will limit false or incorrect information provided by their customers
 
-To learn more about Next.js, take a look at the following resources:
+![image](https://github.com/Adedoyin-Emmanuel/identifeye/assets/100234404/d4f325c1-8053-4b7c-85c2-8fa098773460)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+# Teams Members
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+name | role
+--- | --- 
+Opemipo Oluwabiyi | Team Lead/Product Designer
+Toriola Oladeji | Product Designer
+Adedoyin Emmanuel | Frontend Developer
+Wachiou Bouraima | Backend Developer
