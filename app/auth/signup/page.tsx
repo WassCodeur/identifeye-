@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 
@@ -8,6 +9,7 @@ export default function Signup() {
 
   const [web5, setWeb5] = useState<any>(null);
   const [myDid, setMyDid] = useState<any>(null);
+  const router = useRouter()
   const [formData, setFormData] = useState({
     name: '',
     did: '',
@@ -28,11 +30,14 @@ export default function Signup() {
       }
     };
   const handleSubmit = (e: any) => {
-    e.preventDefault();
-    console.log('Formulaire soumis avec les données :', formData);
+    e.preventDefault()
+    console.log(formData)
+    router.push("/user/dashboard")
+  
   };
 
   const handleChange = (e: any) => {
+    e.preventDefault()
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -41,7 +46,6 @@ export default function Signup() {
 
   const handleClick = async () => {
     
-    // Vous pouvez appeler à nouveau initWeb5 ici si besoin
    initWeb5()
   };
   return (
