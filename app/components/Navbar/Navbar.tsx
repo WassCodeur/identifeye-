@@ -58,7 +58,7 @@ const Navbar: React.FC = (): JSX.Element => {
   };
 
   return (
-    <nav className="flex items-center justify-center lg:justify-between md:flex-row flex-col py-5 overflow-x-hidden max-w-screen-2xl mx-auto px-5 md:px-14">
+    <nav className="flex items-center justify-center lg:justify-between md:flex-row flex-col py-5 overflow-x-hidden max-w-screen-xl mx-auto px-5 ">
       <h2 className=" mx-5 hidden md:flex items-center cursor-pointer ">
         <Link
           href="/"

@@ -26,18 +26,18 @@ export default function Home() {
   return (
     <main className="bg-primary text-white overflow-x-hidden px-5 md:px-14">
       <div className="max-w-screen-xl mx-auto homepage-gradient bg-blend-multiply">
-        <section className="py-5 md:py-16 flex h-[95dvh] lg:flex  lg:items-stretch lg:flex-row flex-col-reverse max-w-screen-xl mx-auto px-5 md:px-12">
+        <section className="py-5 md:py-16 flex min-h-[400px] lg:min-h-[500px] lg:flex  lg:items-stretch lg:flex-row flex-col-reverse max-w-screen-xl mx-auto px-5 md:px-12">
           <div className="lg:w-2/5 flex flex-col justify-center">
             <h1 className="md:text-4xl text-3xl text-zinc-100 text-center lg:text-[64px] font-bold mb-4">
               IdentifEye
             </h1>
-            <p className="py-5 w-96 text-center text-zinc-100 text-xl font-light">
+            <p className="py-5 text-center text-zinc-100 text-xl font-light">
               Leveraging blockchain technology to provide an All-In-One
               decentralized Identification number
             </p>
 
             <Link href={"/auth/signup"} className="block mt-10 mx-10">
-              <Button className="md:w-10/12 bg-white !text-black">
+              <Button className="md:w-10/12 mx-auto bg-white !text-black">
                 get started
               </Button>
             </Link>

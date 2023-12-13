@@ -3,44 +3,66 @@
 @tailwind utilities;
 
 @font-face {
-  src: url("/fonts/fira-code.ttf");
-  font-family: FiraCode;
-  font-weight: normal;
-  font-style: normal;
+    src: url("/fonts/fira-code.ttf");
+    font-family: FiraCode;
+    font-weight: normal;
+    font-style: normal;
 }
 
 html {
-  scroll-behavior: smooth;
-  scroll-padding-top: var(--scroll-padding, 20px);
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--scroll-padding, 20px);
 }
 
 body {
-  font-family: FiraCode;
-  background-color: #000503;
-  @apply max-w-full overflow-x-hidden;
+    font-family: FiraCode;
+    background-color: #000503;
+    @apply max-w-full overflow-x-hidden;
 }
 
 .button-shadow {
-  box-shadow: -4px 4px 1px 0px #0f6;
+    box-shadow: -4px 4px 1px 0px #0f6;
 }
 
 .button-shadow:hover {
-  box-shadow: -4px 2px 1px 0px #0f6;
+    box-shadow: -4px 2px 1px 0px #0f6;
 }
 
 .homepage-gradient {
-  background: conic-gradient(
-      from 156.1deg at 46.04% 10.91%,
-      rgba(1, 249, 100, 0) -88.13deg,
-      #00ff663d 143.88deg,
-      rgba(1, 249, 100, 0) 271.87deg,
-      #00ff663d 503.88deg
-    ),
-    radial-gradient(
-        76.95% 76.95% at 80.14% 23.05%,
-        rgba(209, 242, 6, 0.2) 2.21%,
-        rgba(209, 242, 6, 0.2) 19.04%,
-        rgba(66, 104, 18, 0) 63.98%
-      )
-      /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    background: conic-gradient(from 156.1deg at 46.04% 10.91%,
+            rgba(1, 249, 100, 0) -88.13deg,
+            #00ff663d 143.88deg,
+            rgba(1, 249, 100, 0) 271.87deg,
+            #00ff663d 503.88deg),
+        radial-gradient(76.95% 76.95% at 80.14% 23.05%,
+            rgba(209, 242, 6, 0.2) 2.21%,
+            rgba(209, 242, 6, 0.2) 19.04%,
+            rgba(66, 104, 18, 0) 63.98%)
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+    ;
+}
+:root {
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
+}
+
+.hoverable-link:hover {
+    background-color: yellow;
+    /* Changez la couleur de fond au survol */
+    cursor: pointer;
+    /* Changez le curseur au survol */
+}
+
+.signup:hover,
+.btn-submit:hover {
+    cursor: pointer;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --foreground-rgb: 255, 255, 255;
+        --background-start-rgb: 0, 0, 0;
+        --background-end-rgb: 0, 0, 0;
+    }
 }

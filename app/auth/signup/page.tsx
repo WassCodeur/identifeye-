@@ -1,72 +1,74 @@
 "use client";
-import React from "react";
-import { useRouter,  } from "next/navigation";
-import Text from "@/app/components/Text/Text";
-import Input from "@/app/components/Input/Input";
-import Button from "@/app/components/Button/Button";
 import Link from "next/link";
+import Image from "next/image";
 
-const Signup = () => {
-    const router = useRouter();
-
-
+export default function Signup() {
   return (
-    <section className="w-screen h-screen flex items-center justify-center">
-      <form className="w-11/12 md:w-1/2 xl:w-1/4">
-        <section className="header-section my-8">
-          <h3 className="text-4xl capitalize font-bold text-secondary">
-            Signup
-          </h3>
-          <Text className="py-1">create an account</Text>
-        </section>
+    <form className="w-[100%] h-[100%] relative bg-black border border-neutral-500" >
+      <div className="w-[100%] h-[103px]  top-[160px] absolute text-zinc-100 text-[40px] font-['Fira Code']">Create an IndentifEye Account</div>
+      <div className="w-[1312px] h-[673px] left-[64px] top-[271px] absolute justify-space items-center gap-14 inline-flex">
+        <div className="flex-col justify-start items-start gap-[30px] inline-flex">
+          <div className="h-56 px-6 py-8 rounded-lg shadow border border-green-500 flex-col justify-start items-start gap-6 flex">
+            <div className="self-stretch h-40 flex-col justify-center items-start gap-12 flex">
 
-        <section className="my-4 mb-5">
-          <label htmlFor="email" className="text-md block my-2">
-            Email
-          </label>
-          <Input type="email" name="email" placeholder="Enter your email" />
-        </section>
+              <input type="text" className="w-[724px] h-14 pl-4 pr-2.5 py-2.5 rounded-lg border border-neutral-400 justify-start items-center gap-2.5 inline-flex" placeholder="Company Name|"></input>
+              <input type="text" className="w-[724px] h-14 pl-4 pr-2.5 py-2.5 rounded-lg border border-neutral-400 justify-start items-center gap-2.5 inline-flex" placeholder="Generate DID|"></input>
 
-        <section className="my-4 mb-5">
-          <label htmlFor="username" className="text-md block my-2">
-            Username
-          </label>
-          <Input
-            type="text"
-            name="username"
-            placeholder="Enter your username"
-          />
-        </section>
 
-        <section className="my-4 mb-5">
-          <label htmlFor="password" className="text-md block my-2">
-            Password
-          </label>
-          <Input
-            type="password"
-            name="password"
-            placeholder="shhhhhhhhhh it's a secret"
-          />
-        </section>
+            </div>
+          </div>
+          <div className="h-[190px] px-6 flex-col justify-start items-start gap-6 flex">
+            <div className="justify-start items-start gap-4 inline-flex">
+              <div className="rounded-lg justify-start items-start gap-2.5 flex">
+                <input type="checkbox" className="w-6 h-6 bg-zinc-300 rounded" />
+              </div>
+              <div className="w-[684px]"> Policy</div>
+            </div>
 
-        <section className="my-4 mb-5 w-full">
-          <Button>create account</Button>
-        </section>
+            <Link href={"/"} className="w-[724px] px-5 py-4 bg-green-500 rounded-lg shadow border-2 border-zinc-100 justify-center items-center gap-2.5 inline-flex text-black text-xl font-['Fira Code']">Generate DID</Link>
 
-        <section>
-          <Text className="inline">
-            got an account?
-            <Link
-              className="capitalize text-secondary px-1"
-              href={"/auth/login"}
-            >
-              login
-            </Link>
-          </Text>
-        </section>
-      </form>
-    </section>
+            <div className="">
+              <input type="submit" value="Sign Up" className="signup w-[724px] px-5 py-4 bg-neutral-400 rounded-lg shadow border-2 border-green-500 justify-center items-center gap-2.5 inline-flex text-black text-xl font-['Fira Code']"></input>
+            </div>
+          </div>
+        </div>
+        <div className="w-[100%] flex-col justify-space items-center gap-6 inline-flex">
+
+          <Image alt="hero" width={500} height={100} src={"/assets/hero.png"} className="w-[90%]  h-[400px] rounded-[50%]" />
+          <div className="w-[390px] text-center">Decentralized Identification Number</div>
+        </div>
+      </div>
+      <div className="left-[64px] top-[32px] absolute justify-space items-center gap-[1000px] inline-flex">
+        <h2 className="font-extrabold text-2xl mx-5 md:flex items-center  hidden cursor-pointer ">
+          <Link href="/" className="flex items-center justify-center gap-x-4">
+            <Image
+              src={"/assets/logo.png"}
+              alt="IdentifEye Logo"
+              width={45}
+              height={35}
+            />
+            <span className="md:block hidden">IdentifEye</span>
+          </Link>
+        </h2>
+        <div className="h-[58px] justify-start items-center gap-4 flex">
+          <Link href={"/"} className="text-zinc-100 text-2xl font-medium font-['Fira Code']">Already have an account?</Link>
+          <div className="h-[58px] px-5 py-4 bg-neutral-400 rounded-lg shadow border-2 border-green-500 justify-center items-center gap-2.5 flex">
+            <Link href={"/"} className="text-black text-xl font-['Fira Code']">Log In</Link>
+          </div>
+        </div>
+      </div>
+      <div className="left-[80px] top-[291px] absolute flex-col justify-start items-start gap-2 inline-flex">
+        <Link href={"/"} className=" text-white text-xl font-['Fira Code']">Individual</Link>
+        <div className="w-[120px] h-[5px] relative">
+          <div className="hoverable-link w-[120px] h-[5px] left-0 top-0 absolute bg-neutral-400 rounded-bl rounded-br" />
+        </div>
+      </div>
+      <div className="left-[240px] top-[291px] absolute flex-col justify-start items-start gap-2 inline-flex">
+        <Link href={"/"} className="text-white text-xl font-['Fira Code']">Business</Link>
+        <div className="w-24 h-[5px] relative">
+          <div className="hoverable-link w-24 h-[5px] left-0 top-0 absolute  bg-neutral-400 rounded-bl rounded-br hoverable-link " />
+        </div>
+      </div>
+    </form>
   );
-};
-
-export default Signup;
+}
