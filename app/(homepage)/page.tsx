@@ -37,7 +37,7 @@ export default function Home() {
             </p>
 
             <Link href={"/auth/signup"} className="block mt-10 mx-10">
-              <Button className="md:w-10/12 bg-white !text-black">
+              <Button className="md:w-10/12 mx-auto bg-white !text-black">
                 get started
               </Button>
             </Link>
