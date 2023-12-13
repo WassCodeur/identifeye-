@@ -74,7 +74,7 @@ export default function Signup() {
             <button onClick={handleClick} type="button" className="w-[724px] px-5 py-4 bg-green-500 rounded-lg shadow border-2 border-zinc-100 justify-center items-center gap-2.5 inline-flex text-black text-xl font-['Fira Code']">Generate DID</button>
 
             <div className="">
-              <input type="submit" value="Sign Up" className="signup w-[724px] px-5 py-4 bg-neutral-400 rounded-lg shadow border-2 border-green-500 justify-center items-center gap-2.5 inline-flex text-black text-xl font-['Fira Code']"></input>
+              <input type="submit" value="Sign Up" className="signup w-[724px] px-5 py-4 bg-neutral-400 rounded-lg shadow border-2 border-green-500 justify-center items-center gap-2.5 inline-flex text-black text-xl font-['Fira Code']" required></input>
             </div>
           </div>
         </div>
