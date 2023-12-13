@@ -8,6 +8,11 @@ export default function Signup() {
 
   const [web5, setWeb5] = useState<any>(null);
   const [myDid, setMyDid] = useState<any>(null);
+  const [formData, setFormData] = useState({
+    name: '',
+    did: '',
+  });
+
 
     const initWeb5 = async () => {
       // @ts-ignore
@@ -17,33 +22,39 @@ export default function Signup() {
         const { web5, did } = await Web5.connect({ sync: '5s' });
         setWeb5(web5);
         setMyDid(did);
-        return did;
-        alert(did)
-        if (web5 && did) {
-          alert('Web5 initialized');
-          // await configureProtocol(web5, did);
-        }
+    
       } catch (error) {
         alert(error);
       }
     };
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    console.log('Formulaire soumis avec les données :', formData);
+  };
 
-  const handleClick = () => {
-    // Vous pouvez appeler à nouveau initWeb5 ici si besoin
-    initWeb5()
+  const handleChange = (e: any) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleClick = async () => {
     
+    // Vous pouvez appeler à nouveau initWeb5 ici si besoin
+   initWeb5()
   };
   return (
 
-    <div className="w-[100%] h-[100%] relative bg-black border border-neutral-500" >
+    <form onSubmit={handleSubmit} className="w-[100%] h-[100%] relative bg-black border border-neutral-500" >
       <div className="w-[100%] h-[103px]  top-[160px] absolute text-zinc-100 text-[40px] font-['Fira Code']">Create an IndentifEye Account</div>
       <div className="w-[1312px] h-[673px] left-[64px] top-[271px] absolute justify-space items-center gap-14 inline-flex">
         <div className="flex-col justify-start items-start gap-[30px] inline-flex">
           <div className="h-56 px-6 py-8 rounded-lg shadow border border-green-500 flex-col justify-start items-start gap-6 flex">
             <div className="self-stretch h-40 flex-col justify-center items-start gap-12 flex">
 
-              <input type="text" className="w-[724px] h-14 pl-4 pr-2.5 py-2.5 rounded-lg border border-neutral-400 justify-start items-center gap-2.5 inline-flex" placeholder="Company Name|"></input>
-              <input type="text" className="w-[724px] h-14 pl-4 pr-2.5 py-2.5 rounded-lg border border-neutral-400 justify-start items-center gap-2.5 inline-flex" placeholder="Generate DID|" value={myDid}></input>
+              <input onChange={handleChange} name="name" type="text" className="w-[724px] h-14 pl-4 pr-2.5 py-2.5 rounded-lg border border-neutral-400 justify-start items-center gap-2.5 inline-flex" placeholder="Company Name|" value={formData.name} required></input>
+              <input onChange={handleChange} name="did" type="text" className="w-[724px] h-14 pl-4 pr-2.5 py-2.5 rounded-lg border border-neutral-400 justify-start items-center gap-2.5 inline-flex" placeholder="Generate DID|" value={myDid} required></input>
 
 
             </div>
@@ -56,7 +67,7 @@ export default function Signup() {
               <div className="w-[684px]"> Policy</div>
             </div>
 
-            <button onClick={handleClick} className="w-[724px] px-5 py-4 bg-green-500 rounded-lg shadow border-2 border-zinc-100 justify-center items-center gap-2.5 inline-flex text-black text-xl font-['Fira Code']">Generate DID</button>
+            <button onClick={handleClick} type="button" className="w-[724px] px-5 py-4 bg-green-500 rounded-lg shadow border-2 border-zinc-100 justify-center items-center gap-2.5 inline-flex text-black text-xl font-['Fira Code']">Generate DID</button>
 
             <div className="">
               <input type="submit" value="Sign Up" className="signup w-[724px] px-5 py-4 bg-neutral-400 rounded-lg shadow border-2 border-green-500 justify-center items-center gap-2.5 inline-flex text-black text-xl font-['Fira Code']"></input>
@@ -100,6 +111,6 @@ export default function Signup() {
           <div className="hoverable-link w-24 h-[5px] left-0 top-0 absolute  bg-neutral-400 rounded-bl rounded-br hoverable-link " />
         </div>
       </div>
-    </div>
+    </form>
   );
 }
