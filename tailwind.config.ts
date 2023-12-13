@@ -7,6 +7,28 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
 
+  theme: {
+    extend: {
+      fontFamily: {
+        fira: ["fira"],
+      },
+      colors: {
+        tranparent: "transparent",
+        current: "currentColor",
+        black: "rgba(0, 0, 0, 1)",
+
+        white: "rgba(255, 255, 255, 1)",
+        green: {
+          1: "rgba(38, 232, 128, 1)",
+        },
+
+        blue: {
+          1: "rgba(9, 5, 28, 1)",
+        },
+      },
+    },
+  },
+
   daisyui: {
     themes: [
       {
