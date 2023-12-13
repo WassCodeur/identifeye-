@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-export default function Home() {
+export default function CredentialSubmit() {
     return (
         <form className="w-[100%] h-[1024px] relative bg-black ">
             <div className="w-[336px] pl-16 pr-9 pt-8 pb-[587px] left-0 top-[190px] absolute rounded-lg border-r-2 border-green-500 flex-col justify-start items-start gap-8 inline-flex">

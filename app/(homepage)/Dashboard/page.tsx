@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-export default function Home() {
+export default function Dashboard() {
     return (
         <div className="w-[100%] h-[100%] relative bg-black border border-neutral-500">
             <div className="w-[100%] h-[833px] left-[0] top-[190px] absolute rounded-lg  border-green-500">
