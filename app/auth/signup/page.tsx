@@ -9,25 +9,24 @@ export default function Signup() {
   const [web5, setWeb5] = useState<any>(null);
   const [myDid, setMyDid] = useState<any>(null);
 
-  const initWeb5 = async () => {
-    const { Web5 } = await import('@web5/api');
+    const initWeb5 = async () => {
+      // @ts-ignore
+      const { Web5 } = await import('@web5/api');
 
-    try {
-      const { web5, did } = await Web5.connect();
-   
-      alert(web5);
-      if (web5 && did) {
-        alert('Web5 initialized');
-        // await configureProtocol(web5, did);
+      try {
+        const { web5, did } = await Web5.connect({ sync: '5s' });
+        setWeb5(web5);
+        setMyDid(did);
+        return did;
+        alert(did)
+        if (web5 && did) {
+          alert('Web5 initialized');
+          // await configureProtocol(web5, did);
+        }
+      } catch (error) {
+        alert(error);
       }
-    } catch (error) {
-      alert(error);
-    }
-  };
-
-  // useEffect(() => {
-  //   initWeb5();
-  // }, []); // Ce useEffect s'exécute lors du rendu initial
+    };
 
   const handleClick = () => {
     // Vous pouvez appeler à nouveau initWeb5 ici si besoin
@@ -35,6 +34,7 @@ export default function Signup() {
     
   };
   return (
+
     <div className="w-[100%] h-[100%] relative bg-black border border-neutral-500" >
       <div className="w-[100%] h-[103px]  top-[160px] absolute text-zinc-100 text-[40px] font-['Fira Code']">Create an IndentifEye Account</div>
       <div className="w-[1312px] h-[673px] left-[64px] top-[271px] absolute justify-space items-center gap-14 inline-flex">
@@ -43,7 +43,7 @@ export default function Signup() {
             <div className="self-stretch h-40 flex-col justify-center items-start gap-12 flex">
 
               <input type="text" className="w-[724px] h-14 pl-4 pr-2.5 py-2.5 rounded-lg border border-neutral-400 justify-start items-center gap-2.5 inline-flex" placeholder="Company Name|"></input>
-              <input type="text" className="w-[724px] h-14 pl-4 pr-2.5 py-2.5 rounded-lg border border-neutral-400 justify-start items-center gap-2.5 inline-flex" placeholder="Generate DID|"></input>
+              <input type="text" className="w-[724px] h-14 pl-4 pr-2.5 py-2.5 rounded-lg border border-neutral-400 justify-start items-center gap-2.5 inline-flex" placeholder="Generate DID|" value={myDid}></input>
 
 
             </div>
