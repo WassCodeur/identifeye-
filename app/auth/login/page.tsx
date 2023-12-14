@@ -88,7 +88,7 @@ const Login = () => {
               className=" object-contain"
             />
           </div>
-          <p className="text-center font-bold text-2xl md:text-3xl max-w-xs mx-auto md:leading-normal">
+          <p className="text-center font-bold text-2xl md:text-3xl max-w-xs mx-auto md:leading-normal mt-4">
             Your{" "}
             <span className="text-3xl md:text-4xl text-[#00FF66] md:leading-normal">
               All-in-One
