@@ -46,6 +46,8 @@ export default function Signup() {
     initWeb5();
   };
   return (
+
+    
     <form
       onSubmit={handleSubmit}
       className="bg-black max-w-screen-xl mx-auto px-5 lg:px-14 py-7 md:py-10"
