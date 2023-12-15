@@ -4,11 +4,10 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import React, { useRef } from "react";
-import toast, { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from "react-hot-toast";
 import Button from "@/app/components/Button/Button";
 import Modal from "@/app/components/Modal/Modal";
 import Text from "@/app/components/Text/Text";
-
 
 export default function Signup() {
   const [web5, setWeb5] = useState<any>(null);
@@ -39,7 +38,7 @@ export default function Signup() {
       setMyDid(did);
       const resolution = await web5.did.resolve(did);
       const didDocument = resolution.didDocument;
-      setdidDocument(didDocument)
+      setdidDocument(didDocument);
     } catch (error) {
       alert(error);
     }
@@ -61,7 +60,7 @@ export default function Signup() {
     initWeb5();
   };
   return (
-    <section className="w-screen h-screen flex-col flex mx-auto items-center justify-center">
+    <section className="flex-col flex mx-auto items-center justify-center">
       <Modal ref={showSuccessModalRef}>
         <section>
           <div className="success-icon flex items-center justify-center">
@@ -101,18 +100,23 @@ export default function Signup() {
           <Text className="my-3">kindly copy your DID for safe keeping</Text>
           <div className="line-clamp-6 break-words">{myDid}</div>
 
-          <Button className="bg-green-500 my-4" onClick={async () => {
-             navigator.clipboard.writeText(myDid);
+          <Button
+            className="bg-green-500 my-4"
+            onClick={async () => {
+              navigator.clipboard.writeText(myDid);
               toast("Copied to clipboard");
-          }} type="button">
+            }}
+            type="button"
+          >
             Copy your DID Now
           </Button>
 
           {/* <input type="text" className="h-100  border border-green-400 text-slate-900 rounded-xl " value={myDid} /> */}
-          <Button onClick={() => router.push("/user/dashboard")} type="button">continue</Button>
+          <Button onClick={() => router.push("/user/dashboard")} type="button">
+            continue
+          </Button>
         </section>
       </Modal>
-
 
       <form
         onSubmit={handleSubmitButtonClick}
@@ -127,15 +131,17 @@ export default function Signup() {
             <div className="flex items-center gap-5 mt-7 md:mt-12">
               <div
                 onClick={() => setActive(1)}
-                className={`border-b-4 rounded-b-md text-white text-xl cursor-pointer ${active === 1 ? "border-[#FBFB00]" : "border-[#B0ADAD]"
-                  }`}
+                className={`border-b-4 rounded-b-md text-white text-xl cursor-pointer ${
+                  active === 1 ? "border-[#FBFB00]" : "border-[#B0ADAD]"
+                }`}
               >
                 Individual
               </div>
               <div
                 onClick={() => setActive(2)}
-                className={`border-b-4 rounded-b-md text-white text-xl cursor-pointer ${active === 2 ? "border-[#FBFB00]" : "border-[#B0ADAD]"
-                  }`}
+                className={`border-b-4 rounded-b-md text-white text-xl cursor-pointer ${
+                  active === 2 ? "border-[#FBFB00]" : "border-[#B0ADAD]"
+                }`}
               >
                 Business
               </div>
@@ -175,7 +181,8 @@ export default function Signup() {
                     type="checkbox"
                     value=""
                     className="w-6 h-6 bg-zinc-300 rounded"
-                    required />
+                    required
+                  />
                 </div>
                 <div className="">
                   I agree to the{" "}

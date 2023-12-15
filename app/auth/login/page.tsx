@@ -49,7 +49,7 @@ const Login = () => {
               name="did"
               type="text"
               className="w-full h-14 pl-4 pr-2.5 py-2.5 rounded-lg border border-[#B0ADAD] text-white bg-transparent justify-start items-center gap-2.5 inline-flex"
-              placeholder="Generate DID"
+              placeholder="Input your DID"
               value=""
               onChange={handleChange}
               required
