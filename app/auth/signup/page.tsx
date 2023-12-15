@@ -99,9 +99,10 @@ export default function Signup() {
             sign up successful
           </h3>
           <Text className="my-3">kindly copy your DID for safe keeping</Text>
+          <div className="break-words">{myDid}</div>
 
-          <input type="text" className="h-100  border border-green-400 text-slate-900 rounded-xl " value={myDid} />
-          <Button onClick={handleSubmit} type="button">continue</Button>
+          {/* <input type="text" className="h-100  border border-green-400 text-slate-900 rounded-xl " value={myDid} /> */}
+          <Button onClick={() => handleSubmit} type="button">continue</Button>
         </section>
       </Modal>
 
