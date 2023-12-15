@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import React, { useRef } from "react";
+import toast, { Toaster } from 'react-hot-toast';
 import Button from "@/app/components/Button/Button";
 import Modal from "@/app/components/Modal/Modal";
 import Text from "@/app/components/Text/Text";
@@ -43,11 +44,10 @@ export default function Signup() {
       alert(error);
     }
   };
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
-    console.log(formData);
-    router.push("/user/dashboard");
-  };
+  // const handleSubmit = (e: any) => {
+  //   e.preventDefault();
+  //   router.push("/user/dashboard");
+  // };
 
   const handleChange = (e: any) => {
     e.preventDefault();
@@ -99,10 +99,17 @@ export default function Signup() {
             sign up successful
           </h3>
           <Text className="my-3">kindly copy your DID for safe keeping</Text>
-          <div className="break-words">{myDid}</div>
+          <div className="line-clamp-6 break-words">{myDid}</div>
+
+          <Button className="bg-green-500 my-4" onClick={async () => {
+             navigator.clipboard.writeText(myDid);
+              toast("Copied to clipboard");
+          }} type="button">
+            Copy your DID Now
+          </Button>
 
           {/* <input type="text" className="h-100  border border-green-400 text-slate-900 rounded-xl " value={myDid} /> */}
-          <Button onClick={() => handleSubmit} type="button">continue</Button>
+          <Button onClick={() => router.push("/user/dashboard")} type="button">continue</Button>
         </section>
       </Modal>
 
